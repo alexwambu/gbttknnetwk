@@ -1,0 +1,30 @@
+services:
+  - type: web
+    name: gbtnetwork-l1
+    runtime: docker
+    plan: standard
+    disk:
+      name: gbt-data
+      mountPath: /data
+      sizeGB: 10
+    envVars:
+      - key: CHAIN_ID
+        value: "999"
+      - key: CURRENCY_SYMBOL
+        value: "GBT"
+      - key: SIGNER_ADDRESS
+        value: "0xYOUR_SIGNER_ADDRESS"
+      - key: PRIVATE_KEY
+        sync: false
+      - key: ACCOUNT_PASSWORD
+        sync: false
+      - key: PRICE_FEED
+        value: "0x0000000000000000000000000000000000000000"
+      - key: FEE_RECEIVER
+        value: "0xF7F965b65E735Fb1C22266BdcE7A23CF5026AF1E"
+      - key: PASSWORD1
+        sync: false
+      - key: PASSWORD2
+        sync: false
+      - key: PUBLIC_RPC_URL
+        value: "https://GBTNetwork"  # optional: public face
